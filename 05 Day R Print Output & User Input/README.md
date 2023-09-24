@@ -72,3 +72,32 @@ In R, you can print output to the console using various functions and methods. H
    This will display the content of the data frame with appropriate column headers and formatting.
 
 These are some of the common methods and functions you can use to print output in R. The choice of which one to use depends on your specific requirements and the desired format of your output.
+
+# Take user input in R
+
+In R, you can take user input using the `readline()` function, which reads a line of text (including spaces) entered by the user from the console. Here's how you can use it:
+
+```R
+# Prompt the user for input
+user_input <- readline("Enter something: ")
+
+# Display the user's input
+cat("You entered:", user_input, "\n")
+```
+
+In this code:
+
+1. `readline("Enter something: ")` is used to prompt the user for input with the message "Enter something: ". The user enters text, and it's stored in the `user_input` variable.
+
+2. `cat("You entered:", user_input, "\n")` is used to display the user's input along with a message.
+
+Here's an example of how it works when you run this code:
+
+```
+Enter something: Hello, World!
+You entered: Hello, World!
+```
+
+The `readline()` function reads the user's input as a character string. If you want to treat the input as a numeric value, you can convert it using functions like `as.numeric()`.
+
+Keep in mind that when taking user input, you may want to include error handling to handle cases where the user enters unexpected or invalid input.
