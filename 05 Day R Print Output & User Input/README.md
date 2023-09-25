@@ -1,4 +1,4 @@
-# R Print Output
+# R Print Output and Input
 
 In R, you can print output to the console using various functions and methods. Here are some common ways to print output in R:
 
