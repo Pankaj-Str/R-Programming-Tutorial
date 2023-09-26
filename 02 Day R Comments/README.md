@@ -1,3 +1,5 @@
+# R Comments
+
 In R, comments are used to add explanatory or descriptive notes within your code. Comments are ignored by the R interpreter and are not executed as part of the program. They are solely for human readers, including yourself and other developers, to understand the code. Here's how you can add comments in R:
 
 1. **Single-line Comments**: To add a single-line comment in R, you can use the `#` symbol. Anything following the `#` on the same line is treated as a comment and is not executed.
