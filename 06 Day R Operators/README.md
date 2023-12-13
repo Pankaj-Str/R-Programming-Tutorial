@@ -13,12 +13,26 @@ In R, operators are symbols or special functions that are used to perform operat
 
    Example:
    ```R
-   x <- 10
-   y <- 3
-   sum <- x + y       # 13
-   difference <- x - y  # 7
-   product <- x * y    # 30
-   quotient <- x / y   # 3.333333
+   # Add two numbers
+   print(1 + 2)
+   
+   # Subtract one number from another
+   print(5 - 3)
+   
+   # Multiply two numbers
+   print(2 * 3)
+   
+   # Divide one number by another
+   print(10 / 2)
+   
+   # Raise one number to the power of another
+   print(2 ^ 3)
+   
+   # Find the remainder when one number is divided by another
+   print(10 %% 3)
+   
+   # Find the quotient of the division, discarding the remainder
+   print(10 %/% 3)
    ```
 
 2. **Comparison Operators**:
@@ -31,12 +45,23 @@ In R, operators are symbols or special functions that are used to perform operat
 
    Example:
    ```R
-   a <- 5
-   b <- 10
-   is_equal <- a == b          # FALSE
-   is_not_equal <- a != b      # TRUE
-   is_less_than <- a < b       # TRUE
-   is_greater_than <- a > b    # FALSE
+   # Check if two numbers are equal
+   print(1 == 2)
+   
+   # Check if two numbers are not equal
+   print(1 != 2)
+   
+   # Check if one number is less than another
+   print(1 < 2)
+   
+   # Check if one number is greater than another
+   print(1 > 2)
+   
+   # Check if one number is less than or equal to another
+   print(1 <= 2)
+   
+   # Check if one number is greater than or equal to another
+   print(1 >= 2)
    ```
 
 3. **Logical Operators**:
