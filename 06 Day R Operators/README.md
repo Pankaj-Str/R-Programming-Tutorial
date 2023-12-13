@@ -73,11 +73,50 @@ In R, operators are symbols or special functions that are used to perform operat
 
    Example:
    ```R
-   is_true <- TRUE
-   is_false <- FALSE
-   logical_not <- !is_true      # FALSE
-   logical_and <- is_true & is_false  # FALSE
-   logical_or <- is_true | is_false   # TRUE
+   # Check if a number is not equal to zero
+   print(34 != 56)
+   
+   # Check if two numbers are both greater than zero
+   print(1 > 0 & 2 > 0)
+   
+   # Check if at least one number is greater than zero
+   print(1 > 0 | 2 < 0)
+   
+   # && (Short-circuit AND): Evaluates the second condition only if the first is TRUE.
+   
+   # left side | right side  | Result
+   #     TRUE  |   TRUE      | TRUE
+   #     TRUE  |   FALSE     | FALSE
+   #     FALSE |   TRUE      | FALSE
+   #     FALSE |   FALSE     | FALSE
+   
+   print(45 < 88 && 34 <= 23)
+   
+   # || (Short-circuit OR): Evaluates the second condition only if the first is FALSE.
+   # left side | right side  | Result
+   #     TRUE  |   TRUE      | TRUE
+   #     TRUE  |   FALSE     | TRUE
+   #     FALSE |   TRUE      | TRUE
+   #     FALSE |   FALSE     | FALSE
+   
+   print(45 < 88 || 34 <= 23)
+   
+   # Example : --->
+   print(34 < 90 && 56==56 || 23 <= 23 && 23 != 23 || 230 < 45)
+   #       t           t         f           f           f
+   #             t
+   #                       t
+   #                               f
+   #                                           f
+   
+   # Example : <---
+   print(34 < 90 && 56==56 || 23 <= 23 && 23 != 23 || 230 < 45)
+   #       t           t         f           f           f
+   #                                               f
+   #                                   f
+   #                         t
+   #             t        
+
    ```
 
 4. **Assignment Operators**:
