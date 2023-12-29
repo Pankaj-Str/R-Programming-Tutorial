@@ -56,7 +56,7 @@ Here's a simplified flowchart for matrix operations in R:
                  | End: Resulting   |
                  |   Matrix         |
                  +------------------+
-
+```
 
 In R, a matrix is a two-dimensional data structure that consists of rows and columns, similar to a table or a spreadsheet. Matrices are used to store and manipulate data in a structured format. Here are some key points and examples related to matrices in R:
 
@@ -64,7 +64,7 @@ In R, a matrix is a two-dimensional data structure that consists of rows and col
 
 You can create matrices in R using the `matrix()` function. You need to provide the data elements, specify the number of rows and columns, and optionally assign row and column names. Here are examples:
 
-```R
+```r
 # Creating a numeric matrix
 numeric_matrix <- matrix(data = 1:12, nrow = 3, ncol = 4)
 
