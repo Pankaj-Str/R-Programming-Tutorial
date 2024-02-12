@@ -26,9 +26,11 @@ categories <- c("Category A", "Category B", "Category C", "Category D")
 counts <- c(10, 25, 15, 30)
 
 # Create a bar plot
-barplot(counts, names.arg = categories, col = "skyblue",
+barplot(counts, names.arg = categories, col = "red",
         main = "Bar Plot Example", xlab = "Categories", ylab = "Counts")
 ```
+![image](https://github.com/Pankaj-Str/R-Programming-Tutorial/assets/36913690/438a32b2-d759-4832-9ed4-ca5c40303059)
+
 
 **2. Add a Title to a Bar Plot:**
 
@@ -50,16 +52,19 @@ You can change the color of the bars by specifying the `col` parameter. Here's a
 barplot(counts, names.arg = categories, col = "lightgreen",
         main = "Bar Plot Example", xlab = "Categories", ylab = "Counts")
 ```
+![image](https://github.com/Pankaj-Str/R-Programming-Tutorial/assets/36913690/1c929f2e-8623-423a-9043-69ae4a412719)
+
 
 **6. Bar Texture:**
 
 To add texture to the bars, you can use the `density` parameter:
 
 ```R
-barplot(counts, names.arg = categories, col = "lightblue",
+barplot(counts, names.arg = categories, col = "black",
         main = "Bar Plot with Texture", xlab = "Categories", ylab = "Counts",
         density = c(10, 20, 30, 40))
 ```
+![image](https://github.com/Pankaj-Str/R-Programming-Tutorial/assets/36913690/313622db-25ab-4c03-be41-6c8eb12c2b49)
 
 **7. Make Bar Plot Horizontal:**
 
