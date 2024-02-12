@@ -35,3 +35,4 @@ In this example:
 4. Finally, we add a legend to indicate the gear values.
 
 You can run this code in an R environment to create and customize a boxplot based on your specific dataset and preferences.
+![image](https://github.com/Pankaj-Str/R-Programming-Tutorial/assets/36913690/bb27f37e-f8e9-484e-87e5-740a35699708)
