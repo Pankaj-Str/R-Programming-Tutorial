@@ -77,7 +77,7 @@ A stacked bar plot can be created using the `beside` parameter. Here's an exampl
 
 ```R
 # Data for stacked bar plot
-data <- matrix(c(10, 5, 15, 10, 25, 10, 30, 15), nrow = 4, byrow = TRUE)
+data <- matrix(c(10, 5, 15, 10, 25, 10, 30, 15), nrow = 4, ncol = 4, byrow = TRUE)
 colnames(data) <- categories
 
 # Create a stacked bar plot
