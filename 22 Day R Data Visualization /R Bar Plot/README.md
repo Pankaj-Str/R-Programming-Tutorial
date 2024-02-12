@@ -75,6 +75,7 @@ barplot(counts, names.arg = categories, col = "lightcoral",
         main = "Horizontal Bar Plot", xlab = "Counts", ylab = "Categories",
         horiz = TRUE)
 ```
+![image](https://github.com/Pankaj-Str/R-Programming-Tutorial/assets/36913690/b671e120-79e8-4f6e-a4e5-31ed7186765c)
 
 **8. Stacked Bar Plot:**
 
@@ -90,5 +91,7 @@ barplot(data, beside = TRUE, col = c("red", "blue", "green", "purple"),
         main = "Stacked Bar Plot Example", xlab = "Categories", ylab = "Counts",
         legend.text = TRUE)
 ```
+![image](https://github.com/Pankaj-Str/R-Programming-Tutorial/assets/36913690/cb7247bf-c619-435d-8d7c-e25285a6d2b5)
+
 
 These examples cover various aspects of creating and customizing bar plots in R. You can adjust the parameters to meet your specific needs and preferences.
