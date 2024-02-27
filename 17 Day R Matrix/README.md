@@ -117,8 +117,9 @@ You can combine matrices vertically or horizontally using the `rbind()` and `cbi
 
 ```R
 # Combining matrices
-matrix3 <- matrix(13:16, nrow = 2)
+matrix3 <- matrix(13:16, nrow = 3 , ncol = 4)
 combined_matrix <- rbind(numeric_matrix, matrix3)  # Combine vertically
+combined_matrix
 ```
 
 **6. Matrix Type:**
