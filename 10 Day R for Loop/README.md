@@ -101,22 +101,42 @@ In this example, we use `seq_along(fruits)` to generate a sequence of indices co
 
    ```
    
-6. **List Iteration:**
-   - Create a list of your favorite fruits.
-   - Use a `for` loop to iterate through the list and print each fruit.
-
-7. **Counting Characters:**
-   - Write a program that takes a string as input.
-   - Use a `for` loop to count and print the number of characters in the string.
 
 ### Assignment 6: While Loops
 
-1. **Countdown Timer:**
-   - Write a program that takes an integer as input and prints a countdown from that number to 1 using a `while` loop.
 
-2. **Password Guessing Game:**
+1. **Password Guessing Game with MCQ :**
    - Choose a secret password and ask the user to guess it.
-   - Use a `while` loop to continue prompting the user until they correctly guess the password.
+   - Use a `while` loop to continue prompting the user until they correctly guess the password and ask MCQ.
+```yaml
+
+-- Enter Password :
+Joy@123
+-- Guessing Password 1 :
+Joy
+-- Guessing Password 2 :
+Jo@123
+-- Guessing Password 3 :
+Joy45
+-- Guessing Password 4 :
+Joy@123
+
+Your password is Right Welcome to MCQ :
+
+Note : ask MCQ when password right ...
+
+Question 1 - Which of the following is NOT an anti-virus software ?
+1) Avast 
+2) Linux 
+3) Norton 
+4) Kaspersky
+
+Enter Your Answer 3
+- wrong answer
+- note if answer is  right then ask 2nd question
+
+
+```
 
 3. **Even Number Generator:**
    - Write a program that generates and prints the first 5 even numbers starting from 1 using a `while` loop.
