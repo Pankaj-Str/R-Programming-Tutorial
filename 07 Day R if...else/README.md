@@ -178,3 +178,43 @@ Grading System
 40 - 60 = Grade C
 30 - 40 = Grade D
 ```
+
+9 . MCQ with Report Card :
+
+7. Password Checker 
+Example : 
+```yaml
+
+  Enter Your Name :
+  joy
+  Enter Your Roll Number :
+  A009A
+  then start MCQ EXAM...
+  
+   1. Who invented Java Programming?
+   1. ) Guido van Rossum
+   2. ) James Gosling
+   3. ) Dennis Ritchie
+   4. ) Bjarne Stroustrup
+   
+   Select Answer 2
+   
+   wrong answer (do not add marks)
+   if select right answer : add 20 marks
+   Note :if select Right Answer 
+   ask 2nd Question ...
+   
+   2. Which component is used to compile, debug and execute the java programs?
+   1. ) JRE
+   2. ) JIT
+   3. ) JDK
+   4. ) JVM
+   
+   Select Answer 2 ... con..
+
+  Ask - 10 total Question
+  and print total ?
+```    
+
+
+
