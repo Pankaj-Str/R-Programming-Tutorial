@@ -148,6 +148,77 @@ print(transposed_matrix)
 [2,]    2    4
 ```
 
+
+### Example 1: Creating a Simple Matrix
+
+This example creates a 4x3 matrix filled with numbers from 1 to 12.
+
+```R
+# Creating a 4x3 matrix with numbers from 1 to 12
+simple_matrix <- matrix(1:12, nrow = 4, ncol = 3)
+print(simple_matrix)
+```
+
+### Output:
+
+```
+     [,1] [,2] [,3]
+[1,]    1    5    9
+[2,]    2    6   10
+[3,]    3    7   11
+[4,]    4    8   12
+```
+
+### Example 2: Matrix with Named Rows and Columns
+
+This example creates a 2x3 matrix and assigns names to the rows and columns.
+
+```R
+# Creating a 2x3 matrix with named rows and columns
+row_names <- c("Row1", "Row2")
+col_names <- c("Col1", "Col2", "Col3")
+
+named_matrix <- matrix(c(1, 2, 3, 4, 5, 6), nrow = 2, ncol = 3,
+                       dimnames = list(row_names, col_names))
+print(named_matrix)
+```
+
+### Output:
+
+```
+     Col1 Col2 Col3
+Row1    1    3    5
+Row2    2    4    6
+```
+
+### Example 3: Matrix Operations - Addition
+
+This example demonstrates matrix addition by creating two 3x3 matrices and adding them together.
+
+```R
+# Creating two 3x3 matrices
+matrix1 <- matrix(1:9, nrow = 3, ncol = 3)
+matrix2 <- matrix(9:1, nrow = 3, ncol = 3)
+
+# Adding the matrices
+sum_matrix <- matrix1 + matrix2
+print(sum_matrix)
+```
+
+### Output:
+
+```
+     [,1] [,2] [,3]
+[1,]   10    8   10
+[2,]    8    8    8
+[3,]   10    8   10
+```
+
+---
+
+
+
+
 ### Conclusion
 
 Matrices are a powerful and versatile data structure in R. This tutorial covered the basics of creating matrices, naming rows and columns, accessing elements, and performing basic operations. For more advanced matrix operations, stay tuned for future tutorials on codeswithpankaj.com!
