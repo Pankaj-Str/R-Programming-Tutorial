@@ -1,69 +1,182 @@
-# R Data Frame
+# Data frames
+### Data frames is a fundamental part of data manipulation and analysis in R. This tutorial will guide you through the basics of creating, inspecting, and manipulating data frames in R.
 
-In R, a data frame is a two-dimensional data structure that resembles a table or a spreadsheet. It is one of the most commonly used data structures for handling and analyzing data because it can store data of different types (numeric, character, logical) in columns and rows. Data frames are particularly useful for representing structured data, such as datasets from spreadsheets or databases. Here are some key points and examples related to data frames in R:
+### What is a Data Frame?
 
-**1. Creating Data Frames:**
+A data frame is a table-like structure in R, where each column can contain different types of data (numeric, character, factor, etc.). It is similar to a spreadsheet or SQL table.
 
-You can create data frames in R using the `data.frame()` function. You provide vectors of data for each column, and each vector becomes a column in the data frame. Here's an example:
+### Creating a Data Frame
 
-```R
-# Creating a data frame
-student_data <- data.frame(
-  Name = c("Alice", "Bob", "Charlie", "David"),
-  Age = c(25, 22, 24, 23),
-  Grade = c("A", "B", "A", "C"),
-  Passed = c(TRUE, TRUE, TRUE, FALSE)
-)
+#### Method 1: Using `data.frame()`
+
+```r
+# Create vectors
+names <- c("Alice", "Bob", "Charlie")
+ages <- c(25, 30, 35)
+genders <- c("Female", "Male", "Male")
+
+# Create a data frame
+df <- data.frame(Name = names, Age = ages, Gender = genders)
+
+# Print the data frame
+print(df)
 ```
 
-**2. Accessing Data Frame Elements:**
+#### Method 2: Using `tibble` from the `tibble` package
 
-You can access elements of a data frame using column names and row indices. Here are examples:
+```r
+# Install tibble package if not already installed
+install.packages("tibble")
 
-```R
-# Accessing elements of a data frame
-name1 <- student_data$Name[1]  # Accessing the first student's name
-age3 <- student_data$Age[3]    # Accessing the age of the third student
+# Load the tibble package
+library(tibble)
+
+# Create a tibble
+df_tibble <- tibble(Name = names, Age = ages, Gender = genders)
+
+# Print the tibble
+print(df_tibble)
 ```
 
-**3. Modifying Data Frames:**
+### Inspecting a Data Frame
 
-You can add, modify, or remove columns and rows in a data frame. Here are examples:
+#### View the Structure
 
-```R
-# Adding a new column
-student_data$City <- c("New York", "Los Angeles", "Chicago", "Houston")
-
-# Modifying an existing column
-student_data$Grade[4] <- "B"
-
-# Removing a column
-student_data$City <- NULL
+```r
+# View the structure of the data frame
+str(df)
 ```
 
-**4. Data Frame Functions:**
+#### Summary Statistics
 
-R provides functions for working with data frames, such as `nrow()`, `ncol()`, `names()`, and `summary()`, which provides a summary of the data in the data frame.
-
-```R
-# Data frame functions
-num_rows <- nrow(student_data)
-num_cols <- ncol(student_data)
-column_names <- names(student_data)
-data_summary <- summary(student_data)
+```r
+# Get summary statistics
+summary(df)
 ```
 
-**5. Data Frame Type:**
+#### View the First and Last Few Rows
 
-Data frames in R can contain columns of different types, including numeric, character, and logical columns.
+```r
+# View the first few rows
+head(df)
 
-```R
-# Creating a data frame with mixed data types
-mixed_data <- data.frame(
-  Name = c("Alice", "Bob"),
-  Age = c(25, 30),
-  Passed = c(TRUE, FALSE)
-)
+# View the last few rows
+tail(df)
 ```
 
-Data frames are widely used in R for data manipulation, exploration, and analysis. They provide a convenient and structured way to work with data, making them an essential part of data analysis in R.
+### Accessing Data Frame Elements
+
+#### By Column Name
+
+```r
+# Access a single column
+df$Name
+
+# Access multiple columns
+df[, c("Name", "Age")]
+```
+
+#### By Row and Column Indices
+
+```r
+# Access a single element
+df[1, 2]
+
+# Access a single row
+df[1, ]
+
+# Access a single column
+df[, 2]
+```
+
+### Adding and Removing Columns
+
+#### Adding a New Column
+
+```r
+# Add a new column
+df$Height <- c(160, 175, 180)
+
+# Print the updated data frame
+print(df)
+```
+
+#### Removing a Column
+
+```r
+# Remove a column
+df$Height <- NULL
+
+# Print the updated data frame
+print(df)
+```
+
+### Filtering Data
+
+#### Using Logical Conditions
+
+```r
+# Filter rows where Age is greater than 28
+df_filtered <- df[df$Age > 28, ]
+
+# Print the filtered data frame
+print(df_filtered)
+```
+
+### Sorting Data
+
+```r
+# Sort the data frame by Age
+df_sorted <- df[order(df$Age), ]
+
+# Print the sorted data frame
+print(df_sorted)
+```
+
+### Merging Data Frames
+
+#### Using `merge()`
+
+```r
+# Create another data frame
+df2 <- data.frame(Name = c("Alice", "Bob", "David"), Salary = c(50000, 55000, 60000))
+
+# Merge data frames
+df_merged <- merge(df, df2, by = "Name", all = TRUE)
+
+# Print the merged data frame
+print(df_merged)
+```
+
+### Handling Missing Values
+
+#### Identify Missing Values
+
+```r
+# Check for missing values
+is.na(df)
+```
+
+#### Remove Rows with Missing Values
+
+```r
+# Remove rows with any missing values
+df_no_na <- na.omit(df)
+
+# Print the data frame without missing values
+print(df_no_na)
+```
+
+#### Replace Missing Values
+
+```r
+# Replace NA with a specific value
+df[is.na(df)] <- 0
+
+# Print the data frame with replaced values
+print(df)
+```
+
+### Conclusion
+
+In this tutorial, we covered the basics of creating, inspecting, and manipulating data frames in R. This includes creating data frames using `data.frame()` and `tibble`, accessing and modifying data frame elements, filtering and sorting data, merging data frames, and handling missing values. Data frames are a powerful tool in R, allowing for flexible and efficient data manipulation, making them essential for data analysis and statistical modeling.
