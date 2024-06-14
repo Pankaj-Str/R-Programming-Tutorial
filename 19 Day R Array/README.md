@@ -146,3 +146,64 @@ This example shows how arrays can help you organize survey data with multiple di
 * Leverage R's functions like `apply` to perform calculations across array dimensions.
 
 
+Absolutely! Here's a practical R programming question involving arrays, along with a solution and explanation:
+
+## Question :
+
+You have collected data on the monthly sales figures (in thousands of dollars) for three different products over a year. The data is organized in a CSV file named "sales_data.csv" with the following format:
+
+```
+Product, Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec
+Product A, 12, 15, 18, 14, 16, 19, 22, 20, 17, 15, 13, 11
+Product B, 8, 10, 12, 9, 11, 13, 15, 14, 12, 10, 8, 7
+Product C, 5, 6, 7, 4, 5, 6, 7, 6, 5, 4, 3, 2
+```
+
+Your task is to:
+
+1. Read the data from the CSV file into an R array.
+2. Calculate the total annual sales for each product.
+3. Determine the best-selling product for each month.
+4. Find the month with the highest overall sales across all products.
+
+**Solution:**
+
+```R
+# 1. Read data from CSV file
+sales_data <- read.csv("sales_data.csv", row.names = 1)
+
+# Convert to array (remove first column which is product names)
+sales_array <- as.matrix(sales_data[, -1])
+
+# 2. Calculate total annual sales
+total_sales <- apply(sales_array, 1, sum)
+
+# 3. Determine best-selling product each month
+best_product_monthly <- apply(sales_array, 2, which.max)
+
+# Get product names
+best_product_names <- rownames(sales_data)[best_product_monthly]
+
+# 4. Find month with highest overall sales
+highest_sales_month <- colnames(sales_data)[-1][which.max(colSums(sales_array))]
+
+
+# Print results
+cat("Total annual sales:\n")
+print(total_sales)
+cat("\nBest-selling product each month:\n")
+print(best_product_names)
+cat("\nMonth with highest overall sales:", highest_sales_month, "\n")
+```
+
+
+
+**Explanation:**
+
+1. **Read Data:** We use `read.csv` to import data. Setting `row.names = 1` uses the first column as row names.
+2. **Convert to Array:**  `as.matrix` creates a numeric array from the data frame, excluding the product name column.
+3. **Calculate Total Sales:** `apply(sales_array, 1, sum)` applies the `sum` function across rows (margin = 1) to get the total for each product.
+4. **Best Product Monthly:** `apply(sales_array, 2, which.max)` applies `which.max` to columns (margin = 2) to find the row index of the max value in each column. We then use these indices to extract the corresponding product names.
+5. **Highest Sales Month:** `colSums(sales_array)` calculates the total for each month. `which.max` is used to find the column with the highest total.
+
+
