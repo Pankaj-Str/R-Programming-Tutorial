@@ -1,44 +1,112 @@
-# R if..else
+# R if...else Statements Tutorial
 
-In R, the `if...else` statement is used for conditional execution of code. It allows you to specify a condition, and based on whether that condition is `TRUE` or `FALSE`, different blocks of code will be executed. The basic syntax of the `if...else` statement in R is as follows:
+Welcome to www.codeswithpankaj.com! In this tutorial, we will explore the `if...else` statement in R, which is used for decision-making in your programs. Understanding how to use `if...else` statements is crucial for controlling the flow of your code based on conditions.
+
+## What is an `if...else` Statement?
+
+An `if...else` statement evaluates a condition and executes specific blocks of code based on whether the condition is `TRUE` or `FALSE`. It allows your program to make decisions dynamically during runtime.
+
+### Syntax of `if...else` Statement
+
+The basic syntax of an `if...else` statement in R is as follows:
 
 ```R
 if (condition) {
-  # Code to execute if the condition is TRUE
+  # Code to execute if condition is TRUE
 } else {
-  # Code to execute if the condition is FALSE
+  # Code to execute if condition is FALSE
 }
 ```
 
-Here's an example of how to use `if...else` in R:
+### Example: Using `if...else` Statement
+
+Let's consider a simple example where we want to check if a number is greater than zero and print a message accordingly:
 
 ```R
-# Example 1: Simple if...else
+# Example of if...else statement
 x <- 10
 
-if (x > 5) {
-  cat("x is greater than 5.\n")
+if (x > 0) {
+  print("x is positive")
 } else {
-  cat("x is not greater than 5.\n")
-}
-
-# Example 2: Nested if...else
-y <- 3
-
-if (y > 5) {
-  cat("y is greater than 5.\n")
-} else if (y == 5) {
-  cat("y is equal to 5.\n")
-} else {
-  cat("y is less than 5.\n")
+  print("x is not positive")
 }
 ```
 
-In the first example, we check if the value of `x` is greater than 5. If it is, we print a message indicating that `x` is greater than 5. Otherwise, we print a message indicating that it's not.
+In this example:
+- `x` is assigned the value `10`.
+- The `if` statement checks if `x` is greater than `0`.
+- Since `10` is greater than `0`, the message `"x is positive"` is printed.
 
-In the second example, we use a nested `if...else` structure to check different conditions for the value of `y`. We first check if `y` is greater than 5, then if it's equal to 5, and finally, if neither of these conditions is met, we print a message indicating that `y` is less than 5.
+### Nested `if...else` Statements
 
-You can also use `if...else` statements to control the flow of your program and make decisions based on conditions.
+You can also nest `if...else` statements to handle multiple conditions.
+
+```R
+# Nested if...else example
+grade <- 85
+
+if (grade >= 90) {
+  print("Grade is A")
+} else if (grade >= 80) {
+  print("Grade is B")
+} else if (grade >= 70) {
+  print("Grade is C")
+} else {
+  print("Grade is D")
+}
+```
+
+In this example:
+- `grade` is `85`.
+- The first `if` condition checks if `grade` is greater than or equal to `90`, printing `"Grade is A"` if true.
+- If not, it checks the next condition (`grade >= 80`) and so on until it finds a true condition or reaches the `else` block.
+
+### Vectorized `if...else`
+
+R also supports vectorized `if...else` statements using the `ifelse()` function, which can apply conditions element-wise to vectors.
+
+```R
+# Vectorized ifelse example
+marks <- c(75, 85, 60, 95, 70)
+
+result <- ifelse(marks >= 80, "Pass", "Fail")
+print(result)
+```
+
+In this example:
+- `marks` is a vector of numeric values.
+- `ifelse()` checks each element in `marks`. If an element is `>= 80`, it returns `"Pass"`, otherwise `"Fail"`.
+
+### Using `if...else` with Functions
+
+You can also use `if...else` statements within functions to control the flow of operations.
+
+```R
+# Using if...else in a function
+is_even <- function(x) {
+  if (x %% 2 == 0) {
+    return(TRUE)
+  } else {
+    return(FALSE)
+  }
+}
+
+# Test the function
+print(is_even(10))   # Output: TRUE
+print(is_even(7))    # Output: FALSE
+```
+
+## Conclusion
+
+In this tutorial, we covered the `if...else` statement in R, including its syntax, examples, nested usage, vectorized form (`ifelse()`), and integrating it within functions. Mastering `if...else` statements is essential for implementing conditional logic and controlling program flow based on dynamic conditions.
+
+For more tutorials and guides, visit [www.codeswithpankaj.com](http://www.codeswithpankaj.com).
+
+---
+
+
+
 
 ## Question - 
 
