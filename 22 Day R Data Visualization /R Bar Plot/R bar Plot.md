@@ -27,6 +27,7 @@ barplot(counts,
         ylab = "Counts", 
         names.arg = c("A", "B", "C", "D"))
 ```
+![image](https://github.com/Pankaj-Str/R-Programming-Tutorial/assets/36913690/2d4d4069-b74c-456e-ac71-7b3ec4061641)
 
 #### Step 3: Customizing Colors
 
