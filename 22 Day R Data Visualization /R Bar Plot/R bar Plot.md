@@ -76,6 +76,7 @@ barplot(counts,
         col = c("red", "blue", "green", "purple"), 
         horiz = TRUE)
 ```
+![image](https://github.com/Pankaj-Str/R-Programming-Tutorial/assets/36913690/b2547fc4-5b65-4206-9c1b-d9f7b5c8ac57)
 
 ### Using `ggplot2` for Bar Plots
 
