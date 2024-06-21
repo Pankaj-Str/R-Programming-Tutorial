@@ -60,6 +60,7 @@ barplot(counts,
 # Add grid lines
 grid(nx = NA, ny = NULL)
 ```
+![image](https://github.com/Pankaj-Str/R-Programming-Tutorial/assets/36913690/844fc48d-3af3-4ec1-bc27-f17edd93ef64)
 
 #### Step 5: Horizontal Bar Plot
 
