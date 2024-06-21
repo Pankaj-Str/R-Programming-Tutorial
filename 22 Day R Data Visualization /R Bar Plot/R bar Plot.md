@@ -111,6 +111,7 @@ df <- data.frame(
 ggplot(df, aes(x = category, y = counts)) +
   geom_bar(stat = "identity")
 ```
+![image](https://github.com/Pankaj-Str/R-Programming-Tutorial/assets/36913690/dadaaee8-cdb7-4ed5-9e5c-18bdae5f2a91)
 
 #### Step 3: Adding Labels and Titles
 
