@@ -13,6 +13,7 @@ counts <- c(23, 17, 35, 29)
 # Create a bar plot
 barplot(counts)
 ```
+![image](https://github.com/Pankaj-Str/R-Programming-Tutorial/assets/36913690/0d121ef6-3898-4270-9ab1-587b67f50c54)
 
 #### Step 2: Adding Labels and Titles
 
