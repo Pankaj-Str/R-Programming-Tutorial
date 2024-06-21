@@ -152,6 +152,8 @@ ggplot(df, aes(x = category, y = counts, fill = category)) +
   theme_minimal()
   
 ```
+![image](https://github.com/Pankaj-Str/R-Programming-Tutorial/assets/36913690/96f4c016-fcd8-4a0c-af24-2ce99ed7658a)
+
 
 #### Step 6: Horizontal Bar Plot
 
@@ -165,4 +167,7 @@ ggplot(df, aes(x = category, y = counts, fill = category)) +
   scale_fill_manual(values = c("red", "blue", "green", "purple")) +
   coord_flip()
 ```
+
+![image](https://github.com/Pankaj-Str/R-Programming-Tutorial/assets/36913690/d86a5699-c15c-4562-8b86-292b9b43062b)
+
 
