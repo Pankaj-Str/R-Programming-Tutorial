@@ -42,6 +42,7 @@ barplot(counts,
         names.arg = c("A", "B", "C", "D"), 
         col = c("red", "blue", "green", "purple"))
 ```
+![image](https://github.com/Pankaj-Str/R-Programming-Tutorial/assets/36913690/e16cb065-ed4f-4a84-980e-c86b3d1ce12d)
 
 #### Step 4: Adding Grid Lines
 
