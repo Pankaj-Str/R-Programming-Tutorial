@@ -123,6 +123,7 @@ ggplot(df, aes(x = category, y = counts)) +
   geom_bar(stat = "identity") +
   labs(title = "Basic Bar Plot", x = "Categories", y = "Counts")
 ```
+![image](https://github.com/Pankaj-Str/R-Programming-Tutorial/assets/36913690/5e344d16-f0db-4dfb-ba6e-0c6cb93dd416)
 
 #### Step 4: Customizing Colors
 
@@ -135,6 +136,8 @@ ggplot(df, aes(x = category, y = counts, fill = category)) +
   labs(title = "Bar Plot with Colors", x = "Categories", y = "Counts") +
   scale_fill_manual(values = c("red", "blue", "green", "purple"))
 ```
+![image](https://github.com/Pankaj-Str/R-Programming-Tutorial/assets/36913690/19f5cbfd-d198-4226-a64e-ac794d459f44)
+
 
 #### Step 5: Adding Grid Lines and Themes
 
@@ -147,6 +150,7 @@ ggplot(df, aes(x = category, y = counts, fill = category)) +
   labs(title = "Bar Plot with Custom Theme", x = "Categories", y = "Counts") +
   scale_fill_manual(values = c("red", "blue", "green", "purple")) +
   theme_minimal()
+  
 ```
 
 #### Step 6: Horizontal Bar Plot
