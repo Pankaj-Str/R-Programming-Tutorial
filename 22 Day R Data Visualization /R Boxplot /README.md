@@ -17,7 +17,8 @@ boxplot(data)
 ```
 
 Output:
-![Basic Box Plot](https://i.imgur.com/1by5q6e.png)
+![image](https://github.com/Pankaj-Str/R-Programming-Tutorial/assets/36913690/04090250-5b1b-438d-a933-dbd717f8bfb8)
+
 
 #### Step 2: Box Plot with Multiple Groups
 
@@ -41,7 +42,8 @@ boxplot(values ~ group, data = data)
 ```
 
 Output:
-![Box Plot with Multiple Groups](https://i.imgur.com/nZzjbzZ.png)
+![image](https://github.com/Pankaj-Str/R-Programming-Tutorial/assets/36913690/76401fa6-c00b-4d67-a88f-68d0af74ac6f)
+
 
 #### Step 3: Adding Titles and Labels
 
