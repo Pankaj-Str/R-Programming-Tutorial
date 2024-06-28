@@ -107,7 +107,8 @@ ggplot(data, aes(x = group, y = values)) +
 ```
 
 Output:
-![Basic Box Plot with ggplot2](https://i.imgur.com/JVi4K5I.png)
+![image](https://github.com/Pankaj-Str/R-Programming-Tutorial/assets/36913690/e7153d77-2325-4efe-8713-f82c1d38f9e1)
+
 
 #### Step 3: Adding Titles and Labels
 
@@ -121,7 +122,8 @@ ggplot(data, aes(x = group, y = values)) +
 ```
 
 Output:
-![Box Plot with Titles and Labels ggplot2](https://i.imgur.com/YptUL4d.png)
+![image](https://github.com/Pankaj-Str/R-Programming-Tutorial/assets/36913690/0fa306ac-a455-4b18-9ce9-91d58f77f79a)
+
 
 #### Step 4: Customizing Colors
 
@@ -137,7 +139,8 @@ ggplot(data, aes(x = group, y = values, fill = group)) +
 ```
 
 Output:
-![Box Plot with Custom Colors ggplot2](https://i.imgur.com/RV1V7Mf.png)
+![image](https://github.com/Pankaj-Str/R-Programming-Tutorial/assets/36913690/63f950c5-b949-43fd-b6fb-4910d9607dd5)
+
 
 #### Step 5: Adding Notches
 
@@ -153,7 +156,8 @@ ggplot(data, aes(x = group, y = values, fill = group)) +
 ```
 
 Output:
-![Box Plot with Notches ggplot2](https://i.imgur.com/t44REHG.png)
+![image](https://github.com/Pankaj-Str/R-Programming-Tutorial/assets/36913690/4c1740f7-408e-4917-ba91-c69a758b1a84)
+
 
 #### Step 6: Horizontal Box Plot
 
@@ -170,7 +174,8 @@ ggplot(data, aes(x = group, y = values, fill = group)) +
 ```
 
 Output:
-![Horizontal Box Plot ggplot2](https://i.imgur.com/JD6GfPM.png)
+![image](https://github.com/Pankaj-Str/R-Programming-Tutorial/assets/36913690/a5ce2a8c-cb19-4446-90f3-f985d8a94c7c)
+
 
 ### Conclusion
 
