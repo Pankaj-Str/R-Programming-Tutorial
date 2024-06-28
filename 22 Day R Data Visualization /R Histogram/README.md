@@ -87,3 +87,5 @@ grid()
 
 
 ```
+![image](https://github.com/Pankaj-Str/R-Programming-Tutorial/assets/36913690/381aef50-cf4d-43bd-b93d-82b2152e5c7f)
+
