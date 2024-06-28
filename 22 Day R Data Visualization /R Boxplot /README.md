@@ -58,7 +58,8 @@ boxplot(values ~ group, data = data,
 ```
 
 Output:
-![Box Plot with Titles and Labels](https://i.imgur.com/p0H1AtO.png)
+![image](https://github.com/Pankaj-Str/R-Programming-Tutorial/assets/36913690/1f462e1c-b66c-4f9f-abc0-ad1913549dda)
+
 
 #### Step 4: Customizing Colors
 
@@ -74,7 +75,8 @@ boxplot(values ~ group, data = data,
 ```
 
 Output:
-![Box Plot with Custom Colors](https://i.imgur.com/YWmD8C8.png)
+![image](https://github.com/Pankaj-Str/R-Programming-Tutorial/assets/36913690/5a31a6e7-6743-40a6-8522-d8f7a417e19d)
+
 
 ### Using `ggplot2` for Box Plots
 
