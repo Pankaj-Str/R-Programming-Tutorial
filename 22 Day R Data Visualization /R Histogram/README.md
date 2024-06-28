@@ -13,6 +13,8 @@ data <- c(22, 25, 27, 30, 32, 32, 33, 35, 36, 38, 39, 40, 40, 41, 42, 43, 45, 45
 # Create a histogram with default number of bins
 hist(data, col = "lightblue", main = "Histogram Example", xlab = "Values", ylab = "Frequency")
 ```
+![image](https://github.com/Pankaj-Str/R-Programming-Tutorial/assets/36913690/14386307-5933-4f1c-b521-e4bf61402a92)
+
 
 In this example:
 
@@ -29,20 +31,32 @@ You can customize histograms by specifying the number of bins, changing the colo
 # Create a histogram with specific number of bins and customizations
 hist(data, breaks = 5, col = "lightgreen", main = "Customized Histogram",
      xlab = "Values", ylab = "Frequency")
+```
+![image](https://github.com/Pankaj-Str/R-Programming-Tutorial/assets/36913690/a3838500-aba0-452d-9be0-d7513acdb339)
 
+```R
 # Adding specific bin boundaries
 hist(data, breaks = c(20, 30, 40, 50), col = "lightcoral", main = "Histogram with Custom Bins",
      xlab = "Values", ylab = "Frequency")
+```
+![image](https://github.com/Pankaj-Str/R-Programming-Tutorial/assets/36913690/ebb2b26a-5e72-4a30-8477-435f10ee1db2)
 
+```R
 # Adding a density curve
-hist(data, col = "lightblue", main = "Histogram with Density Curve",
+hist(data, breaks = c(20, 30, 45, 50), col = "lightblue", main = "Histogram with Density Curve",
      xlab = "Values", ylab = "Frequency", prob = TRUE)
 lines(density(data), col = "red")
+```
+![image](https://github.com/Pankaj-Str/R-Programming-Tutorial/assets/36913690/e50dce86-cf8a-40ab-aded-ba7fef9a14cd)
 
+```R
 # Adding relative frequencies
 hist(data, col = "lightgray", main = "Histogram with Relative Frequencies",
      xlab = "Values", ylab = "Relative Frequency", prob = TRUE)
 ```
+
+![image](https://github.com/Pankaj-Str/R-Programming-Tutorial/assets/36913690/47ea99ac-1b42-455c-bcfe-dd414751cd54)
+
 
 These examples show various customizations you can apply to your histograms, including specifying the number of bins, setting different colors, adding density curves, and displaying relative frequencies.
 
