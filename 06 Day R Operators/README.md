@@ -1,145 +1,228 @@
-# R Operator
+# Tutorial on R Operators
 
-In R, operators are symbols or special functions that are used to perform operations on data. Operators are an essential part of programming in R, allowing you to perform mathematical, logical, and other operations. Here are some common types of operators in R:
+**Website:** www.codeswithpankaj.com  
+**Tutorial Name:** Codes With Pankaj
 
-1. **Arithmetic Operators**:
-   - `+` (Addition): Adds two values.
-   - `-` (Subtraction): Subtracts the second value from the first.
-   - `*` (Multiplication): Multiplies two values.
-   - `/` (Division): Divides the first value by the second.
-   - `^` (Exponentiation): Raises the first value to the power of the second.
-   - `%%` (Modulus): Returns the remainder when the first value is divided by the second.
-   - `%/%` (Integer Division): Returns the quotient of the division, discarding the remainder.
+## Introduction
 
-   Example:
-   ```R
-   # Add two numbers
-   print(1 + 2)
-   
-   # Subtract one number from another
-   print(5 - 3)
-   
-   # Multiply two numbers
-   print(2 * 3)
-   
-   # Divide one number by another
-   print(10 / 2)
-   
-   # Raise one number to the power of another
-   print(2 ^ 3)
-   
-   # Find the remainder when one number is divided by another
-   print(10 %% 3)
-   
-   # Find the quotient of the division, discarding the remainder
-   print(10 %/% 3)
-   ```
+In R, operators are used to perform various operations on variables and values. These operations include arithmetic operations, comparisons, logical decisions, and assignment of values. This tutorial will cover the different types of operators available in R and provide examples to make the concepts clear and easy to understand.
 
-2. **Comparison Operators**:
-   - `==` (Equal to): Checks if two values are equal.
-   - `!=` or `<>` (Not equal to): Checks if two values are not equal.
-   - `<` (Less than): Checks if the first value is less than the second.
-   - `>` (Greater than): Checks if the first value is greater than the second.
-   - `<=` (Less than or equal to): Checks if the first value is less than or equal to the second.
-   - `>=` (Greater than or equal to): Checks if the first value is greater than or equal to the second.
+## 01. Arithmetic Operators
 
-   Example:
-   ```R
-   # Check if two numbers are equal
-   print(1 == 2)
-   
-   # Check if two numbers are not equal
-   print(1 != 2)
-   
-   # Check if one number is less than another
-   print(1 < 2)
-   
-   # Check if one number is greater than another
-   print(1 > 2)
-   
-   # Check if one number is less than or equal to another
-   print(1 <= 2)
-   
-   # Check if one number is greater than or equal to another
-   print(1 >= 2)
-   ```
+Arithmetic operators are used to perform basic mathematical operations such as addition, subtraction, multiplication, and division.
 
-3. **Logical Operators**:
-   - `!` (Logical NOT): Negates a logical value.
-   - `&` (Logical AND): Returns `TRUE` if both values are `TRUE`.
-   - `|` (Logical OR): Returns `TRUE` if at least one value is `TRUE`.
-   - `&&` (Short-circuit AND): Evaluates the second condition only if the first is `TRUE`.
-   - `||` (Short-circuit OR): Evaluates the second condition only if the first is `FALSE`.
+### List of Arithmetic Operators
 
-   Example:
-   ```R
-   # Check if a number is not equal to zero
-   print(34 != 56)
-   
-   # Check if two numbers are both greater than zero
-   print(1 > 0 & 2 > 0)
-   
-   # Check if at least one number is greater than zero
-   print(1 > 0 | 2 < 0)
-   
-   # && (Short-circuit AND): Evaluates the second condition only if the first is TRUE.
-   
-   # left side | right side  | Result
-   #     TRUE  |   TRUE      | TRUE
-   #     TRUE  |   FALSE     | FALSE
-   #     FALSE |   TRUE      | FALSE
-   #     FALSE |   FALSE     | FALSE
-   
-   print(45 < 88 && 34 <= 23)
-   
-   # || (Short-circuit OR): Evaluates the second condition only if the first is FALSE.
-   # left side | right side  | Result
-   #     TRUE  |   TRUE      | TRUE
-   #     TRUE  |   FALSE     | TRUE
-   #     FALSE |   TRUE      | TRUE
-   #     FALSE |   FALSE     | FALSE
-   
-   print(45 < 88 || 34 <= 23)
-   
-   # Example : --->
-   print(34 < 90 && 56==56 || 23 <= 23 && 23 != 23 || 230 < 45)
-   #       t           t         f           f           f
-   #             t
-   #                       t
-   #                               f
-   #                                           f
-   
-   # Example : <---
-   print(34 < 90 && 56==56 || 23 <= 23 && 23 != 23 || 230 < 45)
-   #       t           t         f           f           f
-   #                                               f
-   #                                   f
-   #                         t
-   #             t        
+| Operator | Description       | Example      |
+|----------|-------------------|--------------|
+| `+`      | Addition          | `x + y`      |
+| `-`      | Subtraction       | `x - y`      |
+| `*`      | Multiplication    | `x * y`      |
+| `/`      | Division          | `x / y`      |
+| `^`      | Exponentiation    | `x ^ y`      |
+| `%%`     | Modulus (remainder) | `x %% y`    |
+| `%/%`    | Integer Division  | `x %/% y`    |
 
-   ```
+### Example:
 
-4. **Assignment Operators**:
-   - `<-` or `=`: Assigns a value to a variable.
-   - `<<-` or `->>`: Assigns a value to a variable in the parent environment (used in functions).
+```r
+# Define two variables
+x <- 10
+y <- 3
 
-   Example:
-   ```R
-   x <- 10
-   y <- 3
-   ```
+# Perform arithmetic operations
+add <- x + y  # Addition
+subtract <- x - y  # Subtraction
+multiply <- x * y  # Multiplication
+divide <- x / y  # Division
+exponent <- x ^ y  # Exponentiation
+modulus <- x %% y  # Modulus
+int_divide <- x %/% y  # Integer Division
 
-5. **Miscellaneous Operators**:
-   - `%in%`: Checks if an element belongs to a vector or list.
-   - `:`: Creates a sequence of numbers.
-   - `%*%`: Matrix multiplication.
-   - `%/%`: Integer division (alternative to `//`).
-   - `%%`: Modulus (alternative to `%`).
+# Print the results
+add
+subtract
+multiply
+divide
+exponent
+modulus
+int_divide
+```
 
-   Example:
-   ```R
-   is_present <- 5 %in% c(1, 2, 3, 4, 5)  # TRUE
-   seq_numbers <- 1:5  # Creates a sequence 1, 2, 3, 4, 5
-   ```
+### Explanation:
 
-These are some of the common operators in R, and they are used extensively in R programming to manipulate data, perform calculations, and make logical decisions.
+- `x + y` adds the values of `x` and `y`.
+- `x - y` subtracts `y` from `x`.
+- `x * y` multiplies `x` and `y`.
+- `x / y` divides `x` by `y`.
+- `x ^ y` raises `x` to the power of `y`.
+- `x %% y` gives the remainder of the division of `x` by `y`.
+- `x %/% y` gives the integer division result of `x` by `y`.
+
+## 02. Relational Operators
+
+Relational operators are used to compare two values. The result of a comparison is a logical value: either `TRUE` or `FALSE`.
+
+### List of Relational Operators
+
+| Operator | Description          | Example    |
+|----------|----------------------|------------|
+| `==`     | Equal to             | `x == y`   |
+| `!=`     | Not equal to         | `x != y`   |
+| `>`      | Greater than         | `x > y`    |
+| `<`      | Less than            | `x < y`    |
+| `>=`     | Greater than or equal to | `x >= y`|
+| `<=`     | Less than or equal to | `x <= y`  |
+
+### Example:
+
+```r
+# Define two variables
+x <- 15
+y <- 10
+
+# Perform relational operations
+equal <- x == y  # Check if x is equal to y
+not_equal <- x != y  # Check if x is not equal to y
+greater <- x > y  # Check if x is greater than y
+less <- x < y  # Check if x is less than y
+greater_equal <- x >= y  # Check if x is greater than or equal to y
+less_equal <- x <= y  # Check if x is less than or equal to y
+
+# Print the results
+equal
+not_equal
+greater
+less
+greater_equal
+less_equal
+```
+
+### Explanation:
+
+- `x == y` checks if `x` is equal to `y`.
+- `x != y` checks if `x` is not equal to `y`.
+- `x > y` checks if `x` is greater than `y`.
+- `x < y` checks if `x` is less than `y`.
+- `x >= y` checks if `x` is greater than or equal to `y`.
+- `x <= y` checks if `x` is less than or equal to `y`.
+
+## 03. Logical Operators
+
+Logical operators are used to perform logical operations, returning either `TRUE` or `FALSE`.
+
+### List of Logical Operators
+
+| Operator | Description          | Example    |
+|----------|----------------------|------------|
+| `&`      | Logical AND          | `x & y`    |
+| `|`      | Logical OR           | `x | y`    |
+| `!`      | Logical NOT          | `!x`       |
+| `&&`     | Logical AND (short-circuit) | `x && y`|
+| `||`     | Logical OR (short-circuit)  | `x || y`|
+
+### Example:
+
+```r
+# Define two logical variables
+x <- TRUE
+y <- FALSE
+
+# Perform logical operations
+and_op <- x & y  # Logical AND
+or_op <- x | y  # Logical OR
+not_op <- !x  # Logical NOT
+
+# Print the results
+and_op
+or_op
+not_op
+```
+
+### Explanation:
+
+- `x & y` returns `TRUE` if both `x` and `y` are `TRUE`.
+- `x | y` returns `TRUE` if either `x` or `y` is `TRUE`.
+- `!x` returns `TRUE` if `x` is `FALSE` and vice versa.
+
+## 04. Assignment Operators
+
+Assignment operators are used to assign values to variables in R.
+
+### List of Assignment Operators
+
+| Operator | Description          | Example    |
+|----------|----------------------|------------|
+| `<-`     | Assigns right side value to left side variable | `x <- 10` |
+| `->`     | Assigns left side value to right side variable | `10 -> x` |
+| `<<-`    | Assigns value in a parent environment (Global Assignment) | `x <<- 20`|
+| `=`      | Another way to assign value | `x = 30` |
+
+### Example:
+
+```r
+# Assign value to a variable
+x <- 25  # Using <-
+y = 15  # Using =
+
+# Global assignment
+z <<- 35
+
+# Print the values
+x
+y
+z
+```
+
+### Explanation:
+
+- `x <- 25` assigns the value `25` to the variable `x`.
+- `y = 15` assigns the value `15` to the variable `y`.
+- `z <<- 35` assigns the value `35` to `z` in the global environment.
+
+## 05. Miscellaneous Operators
+
+R provides additional operators that perform various special operations.
+
+### List of Miscellaneous Operators
+
+| Operator | Description           | Example    |
+|----------|-----------------------|------------|
+| `:`      | Sequence operator     | `x <- 1:5` |
+| `%in%`   | Membership operator   | `x %in% c(1, 2, 3)` |
+| `%*%`    | Matrix multiplication | `A %*% B`  |
+
+### Example:
+
+```r
+# Sequence operator
+seq_op <- 1:10  # Generates a sequence from 1 to 10
+
+# Membership operator
+x <- 5
+members <- x %in% c(1, 2, 3, 4, 5)  # Checks if x is in the list
+
+# Matrix multiplication
+A <- matrix(c(1, 2, 3, 4), nrow = 2)
+B <- matrix(c(5, 6, 7, 8), nrow = 2)
+matrix_mult <- A %*% B  # Multiplies matrix A and B
+
+# Print the results
+seq_op
+members
+matrix_mult
+```
+
+### Explanation:
+
+- `1:10` creates a sequence from 1 to 10.
+- `x %in% c(1, 2, 3, 4, 5)` checks if `x` is a member of the list `c(1, 2, 3, 4, 5)`.
+- `A %*% B` performs matrix multiplication of matrices `A` and `B`.
+
+## Conclusion
+
+R operators are essential for performing a wide range of operations in R programming. Understanding how to use these operators effectively is crucial for solving complex problems and building robust data analysis pipelines. Practice with the examples provided, and soon you'll be comfortable using operators in your own R scripts.
+
+For more tutorials and examples, visit www.codeswithpankaj.com.
+
+
