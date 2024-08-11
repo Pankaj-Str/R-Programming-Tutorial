@@ -224,7 +224,6 @@ while (outer_counter <= 3) {
 [1] "Outer Counter: 3 Inner Counter: 2"
 ```
 
----
 
 ## **8. Common Mistakes and Best Practices**
 
@@ -262,8 +261,6 @@ while (outer_counter <= 3) {
 - **Use `next` to Skip Iterations:** Use `next` to skip specific iterations without terminating the loop.
 - **Test Edge Cases:** Test your `while` loop with edge cases to ensure it behaves as expected.
 
----
-
 ## **9. Summary and Conclusion**
 
 This tutorial covered the essential aspects of the `while` loop in R programming. We explored its syntax, basic examples, potential pitfalls like infinite loops, and best practices for using `while` loops effectively.
@@ -274,4 +271,3 @@ This tutorial covered the essential aspects of the `while` loop in R programming
 - **Avoid Infinite Loops:** Always ensure your loop has a clear condition to terminate.
 
 The `Codes With Pankaj` tutorial on [www.codeswithpankaj.com](http://www.codeswithpankaj.com) 
----
