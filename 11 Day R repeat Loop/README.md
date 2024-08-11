@@ -1,7 +1,3 @@
-Sure! Below is a comprehensive tutorial on the `repeat` loop in R programming, which includes detailed explanations, syntax, and examples.
-
----
-
 # **Tutorial on `repeat` Loop in R Programming**
 
 **Website Name**: [www.codeswithpankaj.com](http://www.codeswithpankaj.com)  
