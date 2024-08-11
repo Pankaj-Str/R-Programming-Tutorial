@@ -224,7 +224,6 @@ while (outer_counter <= 3) {
 [1] "Outer Counter: 3 Inner Counter: 2"
 ```
 
-
 ## **8. Common Mistakes and Best Practices**
 
 ### **Common Mistakes**
