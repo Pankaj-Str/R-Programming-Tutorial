@@ -215,14 +215,14 @@ while (outer_counter <= 3) {
 - This results in combinations of outer and inner loop values being printed.
 
 **Output:**
-``]
+```yaml
 [1] "Outer Counter: 1 Inner Counter: 1"
 [1] "Outer Counter: 1 Inner Counter: 2"
 [1] "Outer Counter: 2 Inner Counter: 1"
 [1] "Outer Counter: 2 Inner Counter: 2"
 [1] "Outer Counter: 3 Inner Counter: 1"
 [1] "Outer Counter: 3 Inner Counter: 2"
-``]
+```
 
 ## **8. Common Mistakes and Best Practices**
 
