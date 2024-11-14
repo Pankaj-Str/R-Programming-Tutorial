@@ -1,4 +1,4 @@
-# R String Methods in Detail
+# R String Methods
 
 **Introduction:**  
 In R, strings are sequences of characters used to represent text data. Manipulating strings is essential in data cleaning, text analysis, and data visualization. This tutorial covers the most commonly used string manipulation methods in R, with examples to illustrate each one.
