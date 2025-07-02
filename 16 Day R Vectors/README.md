@@ -1,147 +1,250 @@
-# R Vectors in Detail
 
-**Introduction:**  
-Vectors are one of the basic data structures in R and are fundamental to handling and processing data. A vector is a sequence of data elements of the same type, such as numbers, characters, or logical values. This tutorial explores creating, manipulating, and applying operations on vectors in R.
+# R Vectors Tutorial : Step-by-Step Guide with Examples
 
-### 1. **Creating Vectors in R**
+Vectors are fundamental data structures in R, used to store elements of the same data type. This tutorial explains vectors in detail, including creation, manipulation, and common operations, with examples.
 
-Vectors in R can be created using the `c()` function, which combines values into a vector.
+## Step 1: Understanding Vectors
+- A vector is a one-dimensional array that holds elements of the same type (numeric, character, logical, etc.).
+- Vectors are the building blocks of data in R, used in data frames, matrices, and more.
+- R supports six types of atomic vectors: numeric (double), integer, character, logical, complex, and raw.
 
-```r
+**Example**: A numeric vector storing ages.
+```R
+ages <- c(25, 30, 35, 40)
+print(ages)
+# Output: [1] 25 30 35 40
+```
+
+## Step 2: Creating Vectors
+Vectors are created using the `c()` function (combine) or other specialized functions.
+
+### Using `c()` Function
+- Combines elements into a vector.
+```R
 # Numeric vector
-numeric_vector <- c(1, 2, 3, 4, 5)
-print(numeric_vector)
+numbers <- c(1, 2, 3, 4, 5)
+print(numbers)
+# Output: [1] 1 2 3 4 5
 
 # Character vector
-character_vector <- c("apple", "banana", "cherry")
-print(character_vector)
+fruits <- c("apple", "banana", "orange")
+print(fruits)
+# Output: [1] "apple"  "banana" "orange"
 
 # Logical vector
-logical_vector <- c(TRUE, FALSE, TRUE)
-print(logical_vector)
+bools <- c(TRUE, FALSE, TRUE)
+print(bools)
+# Output: [1]  TRUE FALSE  TRUE
 ```
 
-### 2. **Types of Vectors**
+### Using Sequence Functions
+- `seq()`: Creates a sequence with specified increments.
+- `:` operator: Creates a sequence with an increment of 1.
+```R
+# Using :
+seq1 <- 1:5
+print(seq1)
+# Output: [1] 1 2 3 4 5
 
-R vectors can be of different types:
-- **Numeric**: Contains decimal or integer values.
-- **Character**: Holds text or string data.
-- **Logical**: Contains TRUE or FALSE values.
-- **Integer**: Stores whole numbers, created with `L` suffix.
-- **Complex**: Holds complex numbers.
-
-```r
-integer_vector <- c(1L, 2L, 3L)         # Integer vector
-complex_vector <- c(1+2i, 3-4i)         # Complex vector
-print(integer_vector)
-print(complex_vector)
+# Using seq()
+seq2 <- seq(from = 1, to = 10, by = 2)
+print(seq2)
+# Output: [1] 1 3 5 7 9
 ```
 
-### 3. **Accessing Vector Elements**
+### Using `rep()` Function
+- Repeats elements or vectors.
+```R
+# Repeat a single value
+rep1 <- rep(5, times = 3)
+print(rep1)
+# Output: [1] 5 5 5
 
-You can access elements in a vector by their index using square brackets `[]`. R uses 1-based indexing.
-
-```r
-vector <- c("a", "b", "c", "d", "e")
-vector[1]      # Access first element
-vector[2:4]    # Access elements from index 2 to 4
-vector[c(1, 3, 5)]  # Access elements at specified positions
+# Repeat a vector
+rep2 <- rep(c(1, 2), times = 2)
+print(rep2)
+# Output: [1] 1 2 1 2
 ```
 
-### 4. **Modifying Vectors**
+## Step 3: Vector Types and Coercion
+- Vectors must contain elements of the same type. If mixed types are provided, R coerces them to a common type (e.g., numeric to character).
+- Use `typeof()` or `class()` to check the vector type.
 
-Vectors in R are mutable, meaning you can change elements in a vector by accessing their indices.
-
-```r
-numeric_vector <- c(1, 2, 3, 4, 5)
-numeric_vector[2] <- 10   # Change second element
-print(numeric_vector)     # Output: 1 10 3 4 5
+**Example**: Coercion in action.
+```R
+mixed <- c(1, "two", 3)
+print(mixed)
+# Output: [1] "1"   "two" "3"
+typeof(mixed)
+# Output: [1] "character"
 ```
 
-### 5. **Vector Operations**
+- Explicit coercion using `as.*()` functions:
+```R
+# Convert numeric to character
+num <- c(1, 2, 3)
+char <- as.character(num)
+print(char)
+# Output: [1] "1" "2" "3"
 
-#### Arithmetic Operations
-R supports arithmetic operations on vectors, and operations are performed element-wise.
-
-```r
-a <- c(1, 2, 3)
-b <- c(4, 5, 6)
-a + b    # Addition: Output: 5 7 9
-a * b    # Multiplication: Output: 4 10 18
-a - b    # Subtraction: Output: -3 -3 -3
+# Convert character to numeric
+char_nums <- c("1", "2", "3")
+nums <- as.numeric(char_nums)
+print(nums)
+# Output: [1] 1 2 3
 ```
 
-#### Logical Operations
-Logical operations return a logical vector with comparisons done element-wise.
+## Step 4: Accessing and Modifying Vectors
+- Use indexing to access or modify elements.
+- Indexing in R starts at 1 (not 0).
 
-```r
-a <- c(1, 2, 3)
-b <- c(3, 2, 1)
-a > b    # Output: FALSE FALSE TRUE
-a == b   # Output: FALSE TRUE FALSE
+### Accessing Elements
+```R
+vec <- c(10, 20, 30, 40, 50)
+
+# Access single element
+print(vec[2])
+# Output: [1] 20
+
+# Access multiple elements
+print(vec[c(1, 3, 5)])
+# Output: [1] 10 30 50
+
+# Access using negative indices (excludes those positions)
+print(vec[-2])
+# Output: [1] 10 30 40 50
 ```
 
-### 6. **Common Vector Functions**
+### Modifying Elements
+```R
+# Modify a single element
+vec[2] <- 25
+print(vec)
+# Output: [1] 10 25 30 40 50
 
-#### `length()`: Get Vector Length
-Returns the number of elements in a vector.
-
-```r
-vector <- c("apple", "banana", "cherry")
-length(vector)   # Output: 3
+# Modify multiple elements
+vec[c(1, 3)] <- c(100, 300)
+print(vec)
+# Output: [1] 100  25 300  40  50
 ```
 
-#### `sum()`, `mean()`, `min()`, `max()`: Summary Functions
-These functions provide common summary statistics.
+## Step 5: Vector Operations
+R supports vectorized operations, meaning operations are applied element-wise without explicit loops.
 
-```r
-numeric_vector <- c(1, 2, 3, 4, 5)
-sum(numeric_vector)    # Output: 15
-mean(numeric_vector)   # Output: 3
-min(numeric_vector)    # Output: 1
-max(numeric_vector)    # Output: 5
+### Arithmetic Operations
+```R
+vec1 <- c(1, 2, 3)
+vec2 <- c(4, 5, 6)
+
+# Addition
+print(vec1 + vec2)
+# Output: [1] 5 7 9
+
+# Multiplication
+print(vec1 * 2)
+# Output: [1] 2 4 6
 ```
 
-#### `sort()`: Sort Vector
-Sorts elements in ascending or descending order.
+### Logical Operations
+```R
+# Logical comparison
+print(vec1 > 2)
+# Output: [1] FALSE FALSE  TRUE
 
-```r
-vector <- c(5, 2, 8, 1)
-sort(vector)            # Output: 1 2 5 8
-sort(vector, decreasing = TRUE)  # Output: 8 5 2 1
+# Element-wise logical AND
+print(vec1 > 1 & vec2 < 6)
+# Output: [1]  TRUE  TRUE FALSE
 ```
 
-### 7. **Vector Recycling**
+### Statistical Operations
+```R
+nums <- c(10, 20, 30, 40, 50)
 
-If vectors of different lengths are used in an operation, R "recycles" the shorter vector to match the length of the longer one.
-
-```r
-a <- c(1, 2, 3)
-b <- c(4, 5)
-a + b    # Output: 5 7 7 (b is recycled as c(4, 5, 4))
+# Sum, mean, min, max
+print(sum(nums))
+# Output: [1] 150
+print(mean(nums))
+# Output: [1] 30
+print(min(nums))
+# Output: [1] 10
+print(max(nums))
+# Output: [1] 50
 ```
 
-### 8. **Filtering Vectors**
+## Step 6: Named Vectors
+- Assign names to vector elements for better readability.
+```R
+scores <- c(85, 90, 95)
+names(scores) <- c("Alice", "Bob", "Charlie")
+print(scores)
+# Output: Alice    Bob Charlie 
+#         85      90      95 
 
-Use logical conditions to filter elements within a vector.
-
-```r
-numeric_vector <- c(1, 2, 3, 4, 5)
-numeric_vector[numeric_vector > 3]  # Output: 4 5
+# Access by name
+print(scores["Bob"])
+# Output: Bob 
+#         90
 ```
 
-### Summary Table of R Vector Functions
+## Step 7: Vector Length and Combining
+- Use `length()` to get the number of elements.
+- Combine vectors using `c()`.
 
-| Function      | Description                            | Example                        |
-|---------------|----------------------------------------|--------------------------------|
-| `c()`         | Combine elements into a vector        | `c(1, 2, 3)`                   |
-| `length()`    | Get number of elements in vector      | `length(vector)`               |
-| `sum()`       | Sum of vector elements                | `sum(c(1, 2, 3))`              |
-| `mean()`      | Mean of vector elements               | `mean(c(1, 2, 3))`             |
-| `min()`       | Minimum value in vector               | `min(c(1, 2, 3))`              |
-| `max()`       | Maximum value in vector               | `max(c(1, 2, 3))`              |
-| `sort()`      | Sort elements in vector               | `sort(c(3, 1, 2))`             |
-| `vector[i]`   | Access ith element                    | `vector[1]`                    |
-| `vector[cond]`| Filter elements by condition          | `vector[vector > 2]`           |
+```R
+vec <- c(1, 2, 3)
+print(length(vec))
+# Output: [1] 3
 
-This guide provides a comprehensive overview of vectors in R, from creation and access to various operations and functions. Use these concepts to work efficiently with vector data in R.
+# Combine vectors
+vec3 <- c(vec, c(4, 5))
+print(vec3)
+# Output: [1] 1 2 3 4 5
+```
+
+## Step 8: Subsetting with Logical Vectors
+- Use logical vectors to filter elements.
+```R
+nums <- c(10, 20, 30, 40, 50)
+filter <- nums > 25
+print(nums[filter])
+# Output: [1] 30 40 50
+```
+
+## Step 9: Handling Missing Values
+- Missing values are represented by `NA`.
+- Use `is.na()` to detect them.
+```R
+vec <- c(1, NA, 3, NA, 5)
+print(is.na(vec))
+# Output: [1] FALSE  TRUE FALSE  TRUE FALSE
+
+# Remove NA values
+print(na.omit(vec))
+# Output: [1] 1 3 5
+```
+
+## Step 10: Practical Example
+Create a vector of student grades, calculate the average, and filter students who passed (grade >= 60).
+
+```R
+# Create named vector
+grades <- c(Alice = 85, Bob = 55, Charlie = 90, Diana = 60)
+print(grades)
+# Output: Alice    Bob Charlie  Diana 
+#         85      55      90      60 
+
+# Calculate average
+avg <- mean(grades)
+print(avg)
+# Output: [1] 72.5
+
+# Filter passing grades
+passing <- grades[grades >= 60]
+print(passing)
+# Output: Alice Charlie  Diana 
+#         85      90      60 
+```
+
+## Conclusion
+Vectors are essential for data manipulation in R. Practice creating, indexing, and performing operations on vectors to master their use. For further exploration, try combining vectors with other R data structures like lists or data frames.
+
