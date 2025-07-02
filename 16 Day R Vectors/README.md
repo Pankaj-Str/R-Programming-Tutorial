@@ -1,5 +1,5 @@
 
-# R Vectors Tutorial : Step-by-Step Guide with Examples
+# R Vectors Tutorial
 
 Vectors are fundamental data structures in R, used to store elements of the same data type. This tutorial explains vectors in detail, including creation, manipulation, and common operations, with examples.
 
