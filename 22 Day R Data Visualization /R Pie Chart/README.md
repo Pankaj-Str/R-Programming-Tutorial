@@ -1,95 +1,153 @@
-# R pie chart
-
-A pie chart is a circular statistical graphic, which is divided into slices to illustrate numerical proportion.
-
-Pie charts represents data visually as a fractional part of a whole, which can be an effective communication tool.
 
 
-1. **Create a Pie Chart in R:**
+# Pie Chart in R –
 
-```R
-# Sample data
-data <- data.frame(
-  category = c("Category A", "Category B", "Category C"),
-  value = c(30, 45, 25)
-)
+## 1. What is a Pie Chart?
 
-# Create the pie chart
-pie_chart <- pie(data$value, labels = data$category, col = c("red", "green", "blue"))
+A **pie chart** is a circular chart used to show **proportions or percentages** of a whole.
+
+Each slice represents a category’s contribution to the total.
+
+---
+
+## 2. When to Use a Pie Chart?
+
+Use a pie chart when:
+
+* You want to show percentage distribution
+* You have a small number of categories
+* Total value equals 100 percent
+
+Avoid pie charts when:
+
+* There are too many categories
+* Values are very close to each other
+
+---
+
+## 3. Creating a Simple Pie Chart in R
+
+### Step 1: Create Data
+
+```r
+values <- c(40, 25, 20, 15)
 ```
 
-2. **Add a Title to a Pie Chart in R:**
+---
 
-```R
-# Add a title to the pie chart
-title("My Pie Chart")
+### Step 2: Create Labels
+
+```r
+labels <- c("India", "USA", "UK", "Canada")
 ```
 
-3. **Add Labels to Each Pie Chart Slice in R:**
+---
 
-```R
-# Add labels to the pie chart slices
-pie_chart <- pie(data$value, labels = paste(data$category, data$value), col = c("red", "green", "blue"))
+### Step 3: Draw Pie Chart
+
+```r
+pie(values, labels)
 ```
 
-4. **Change the Color of Pie Slices in R:**
+---
 
-```R
-# Change the colors of the pie chart slices
-pie_chart <- pie(data$value, labels = data$category, col = c("orange", "purple", "pink"))
+## 4. Pie Chart with Title and Colors
+
+```r
+pie(values,
+    labels = labels,
+    main = "Country-wise Distribution",
+    col = c("orange", "skyblue", "lightgreen", "pink"))
 ```
 
-5. **Create a 3D Pie Chart in R:**
+---
 
-```R
-# Create a 3D pie chart (requires the 'plotrix' package)
+## 5. Pie Chart with Percentages
+
+### Step 1: Calculate Percentages
+
+```r
+percent <- round(values / sum(values) * 100)
+labels_with_percent <- paste(labels, percent, "%")
+```
+
+---
+
+### Step 2: Plot Pie Chart
+
+```r
+pie(values,
+    labels = labels_with_percent,
+    main = "Country-wise Percentage Distribution")
+```
+
+---
+
+## 6. Pie Chart Using Real Dataset
+
+### Example: Gender Distribution
+
+```r
+gender <- c(60, 40)
+labels <- c("Male", "Female")
+
+pie(gender,
+    labels = labels,
+    main = "Gender Distribution",
+    col = c("lightblue", "pink"))
+```
+
+---
+
+## 7. 3D Pie Chart (Using plotrix Package)
+
+### Step 1: Install and Load Package
+
+```r
 install.packages("plotrix")
 library(plotrix)
-
-# Sample data
-data <- c(30, 45, 25)
-labels <- c("Category A", "Category B", "Category C")
-colors <- c("red", "green", "blue")
-
-# Create the 3D pie chart
-pie3D(data, labels = labels, explode = 0.1, col = colors)
 ```
 
-You can run each of these code snippets separately in your R environment to achieve the desired tasks without having them all in a single file.
+---
 
+### Step 2: Create 3D Pie Chart
 
-Example 
-
-```R
-# Load required libraries
-library(ggplot2)
-library(plotly)
-
-# Sample data
-data <- data.frame(
-  category = c("Category A", "Category B", "Category C"),
-  value = c(30, 45, 25)
-)
-
-# Basic Pie Chart
-basic_pie_chart <- ggplot(data, aes(x = "", y = value, fill = category)) +
-  geom_bar(stat = "identity", width = 1) +
-  coord_polar(theta = "y") +
-  ggtitle("Basic Pie Chart") +
-  scale_fill_manual(values = c("Category A" = "red", "Category B" = "green", "Category C" = "blue")) +
-  theme_void()
-
-# Add Labels to Slices
-labels_pie_chart <- basic_pie_chart +
-  geom_text(aes(label = paste(category, value, "%"), x = 0.5, y = 0.5), position = position_stack(vjust = 0.5)) +
-  theme_void()
-
-# 3D Pie Chart
-pie_3d <- plot_ly(data, labels = ~category, values = ~value, type = "pie", pull = c(0.1, 0, 0), marker = list(colors = c("red", "green", "blue"))) %>%
-  layout(title = "3D Pie Chart")
-
-# Display the pie charts
-print(labels_pie_chart)
-pie_3d
-
+```r
+pie3D(values,
+      labels = labels,
+      main = "3D Pie Chart Example",
+      explode = 0.1)
 ```
+
+---
+
+## 8. Pie Chart Parameters
+
+| Parameter    | Description         |
+| ------------ | ------------------- |
+| `labels`     | Names of categories |
+| `main`       | Title               |
+| `col`        | Slice colors        |
+| `radius`     | Size of pie         |
+| `clockwise`  | Direction of slices |
+| `init.angle` | Starting angle      |
+
+---
+
+## 9. Common Mistakes by Beginners
+
+* Using too many categories
+* Not showing percentages
+* Using pie chart for comparison
+* Overusing 3D pie charts
+
+---
+
+## 10. Summary
+
+* Pie chart shows parts of a whole
+* Best for percentage or proportion data
+* Simple to create in R using `pie()`
+* Not ideal for detailed comparisons
+
+
