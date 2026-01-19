@@ -1,182 +1,189 @@
-# R Boxplot
 
-Creating and customizing box plots in R is an essential part of data visualization, especially when you need to summarize the distribution of a dataset. This tutorial will guide you through the steps to create and customize box plots using both base R and the `ggplot2` package.
+# Boxplot in R –
 
-### Using `boxplot()` in Base R
+## 1. What is a Boxplot?
 
-#### Step 1: Basic Box Plot
+A **boxplot** (also called a **box-and-whisker plot**) is a graphical representation used to display the **distribution of numerical data**.
 
-First, we will create a simple box plot using the `boxplot()` function from base R.
+It helps us understand:
+
+* Data spread
+* Median value
+* Quartiles
+* Outliers
+
+Boxplots are widely used in **data analysis and statistics**.
+
+---
+
+## 2. Components of a Boxplot
+
+A boxplot consists of five main values:
+
+| Component | Description                       |
+| --------- | --------------------------------- |
+| Minimum   | Smallest value excluding outliers |
+| Q1        | First quartile (25%)              |
+| Median    | Middle value (50%)                |
+| Q3        | Third quartile (75%)              |
+| Maximum   | Largest value excluding outliers  |
+| Outliers  | Extreme values shown as dots      |
+
+---
+
+## 3. Why Use a Boxplot?
+
+Boxplots are useful because they:
+
+* Show data distribution clearly
+* Identify outliers easily
+* Compare multiple datasets
+* Summarize large data in a compact form
+
+---
+
+## 4. Creating a Simple Boxplot in R
+
+### Step 1: Create a Numeric Vector
 
 ```r
-# Generate sample data
-data <- rnorm(100, mean = 50, sd = 10)
+data <- c(10, 12, 15, 18, 20, 22, 25, 30, 100)
+```
 
-# Create a basic box plot
+---
+
+### Step 2: Draw the Boxplot
+
+```r
 boxplot(data)
 ```
 
-Output:
-![image](https://github.com/Pankaj-Str/R-Programming-Tutorial/assets/36913690/04090250-5b1b-438d-a933-dbd717f8bfb8)
+Explanation:
 
+* The box represents Q1 to Q3
+* The line inside the box is the median
+* Dots represent outliers
 
-#### Step 2: Box Plot with Multiple Groups
+---
 
-You can create a box plot for multiple groups.
+## 5. Adding Title and Labels
 
 ```r
-# Generate sample data for multiple groups
-set.seed(123)
-group1 <- rnorm(50, mean = 50, sd = 10)
-group2 <- rnorm(50, mean = 60, sd = 15)
-group3 <- rnorm(50, mean = 55, sd = 20)
+boxplot(data,
+        main = "Simple Boxplot Example",
+        ylab = "Values",
+        col = "lightblue")
+```
 
-# Combine the data into a data frame
-data <- data.frame(
-  values = c(group1, group2, group3),
-  group = factor(rep(c("Group 1", "Group 2", "Group 3"), each = 50))
-)
+---
 
-# Create a box plot for multiple groups
-boxplot(values ~ group, data = data)
+## 6. Horizontal Boxplot
+
+```r
+boxplot(data,
+        horizontal = TRUE,
+        main = "Horizontal Boxplot",
+        col = "orange")
+```
+
+---
+
+## 7. Boxplot Using a Real Dataset
+
+### Step 1: Load Built-in Dataset
+
+```r
+data(mtcars)
+```
+
+---
+
+### Step 2: Boxplot of Mileage
+
+```r
+boxplot(mtcars$mpg,
+        main = "Mileage of Cars",
+        ylab = "Miles Per Gallon",
+        col = "lightgreen")
+```
+
+---
+
+## 8. Multiple Boxplots in One Graph
+
+```r
+boxplot(mtcars[, c("mpg", "hp", "wt")],
+        main = "Comparison of Car Features",
+        col = c("skyblue", "pink", "yellow"))
+```
+
+Use this to compare multiple variables.
+
+---
+
+## 9. Grouped Boxplot (Important Concept)
+
+### Example: Mileage by Number of Cylinders
+
+```r
+boxplot(mpg ~ cyl,
+        data = mtcars,
+        main = "Mileage vs Cylinders",
+        xlab = "Number of Cylinders",
+        ylab = "Mileage",
+        col = c("lightblue", "lightgreen", "lightpink"))
+```
+
+This shows how mileage changes across engine types.
+
+---
+
+## 10. Identifying Outliers in R
+
+```r
+boxplot.stats(data)$out
 ```
 
 Output:
-![image](https://github.com/Pankaj-Str/R-Programming-Tutorial/assets/36913690/76401fa6-c00b-4d67-a88f-68d0af74ac6f)
 
-
-#### Step 3: Adding Titles and Labels
-
-You can add titles and labels to make the plot more informative.
-
-```r
-# Create a box plot with titles and labels
-boxplot(values ~ group, data = data, 
-        main = "Box Plot of Values by Group", 
-        xlab = "Group", 
-        ylab = "Values")
+```
+[1] 100
 ```
 
-Output:
-![image](https://github.com/Pankaj-Str/R-Programming-Tutorial/assets/36913690/1f462e1c-b66c-4f9f-abc0-ad1913549dda)
+---
 
-
-#### Step 4: Customizing Colors
-
-Colors can be customized using the `col` parameter.
+## 11. Notched Boxplot
 
 ```r
-# Create a box plot with custom colors
-boxplot(values ~ group, data = data, 
-        main = "Box Plot with Custom Colors", 
-        xlab = "Group", 
-        ylab = "Values", 
-        col = c("red", "blue", "green"))
+boxplot(data,
+        notch = TRUE,
+        col = "cyan",
+        main = "Notched Boxplot")
 ```
 
-Output:
-![image](https://github.com/Pankaj-Str/R-Programming-Tutorial/assets/36913690/5a31a6e7-6743-40a6-8522-d8f7a417e19d)
+Notches help compare medians.
 
+---
 
-### Using `ggplot2` for Box Plots
+## 12. Common Boxplot Parameters
 
-The `ggplot2` package provides a more flexible and powerful way to create box plots.
+| Parameter      | Purpose           |
+| -------------- | ----------------- |
+| `main`         | Title             |
+| `xlab`, `ylab` | Axis labels       |
+| `col`          | Box color         |
+| `horizontal`   | Horizontal plot   |
+| `notch`        | Median confidence |
+| `border`       | Border color      |
 
-#### Step 1: Install and Load `ggplot2`
+---
 
-If you haven't installed `ggplot2` yet, you can do so by running:
+## 13. Summary
 
-```r
-install.packages("ggplot2")
-```
+* Boxplot is used to visualize data distribution
+* It shows median, quartiles, and outliers
+* Helpful for comparing datasets
+* Very important in data analysis
 
-Then, load the package:
+---
 
-```r
-library(ggplot2)
-```
-
-#### Step 2: Basic Box Plot with `ggplot2`
-
-Create a simple box plot using `ggplot2`.
-
-```r
-# Create a basic box plot
-ggplot(data, aes(x = group, y = values)) +
-  geom_boxplot()
-```
-
-Output:
-![image](https://github.com/Pankaj-Str/R-Programming-Tutorial/assets/36913690/e7153d77-2325-4efe-8713-f82c1d38f9e1)
-
-
-#### Step 3: Adding Titles and Labels
-
-You can add titles and labels using the `labs()` function.
-
-```r
-# Create a box plot with titles and labels
-ggplot(data, aes(x = group, y = values)) +
-  geom_boxplot() +
-  labs(title = "Box Plot of Values by Group", x = "Group", y = "Values")
-```
-
-Output:
-![image](https://github.com/Pankaj-Str/R-Programming-Tutorial/assets/36913690/0fa306ac-a455-4b18-9ce9-91d58f77f79a)
-
-
-#### Step 4: Customizing Colors
-
-Colors can be customized using the `aes()` and `scale_fill_manual()` functions.
-
-```r
-# Create a box plot with custom colors
-ggplot(data, aes(x = group, y = values, fill = group)) +
-  geom_boxplot() +
-  labs(title = "Box Plot with Custom Colors", x = "Group", y = "Values") +
-  scale_fill_manual(values = c("red", "blue", "green")) +
-  theme_minimal()
-```
-
-Output:
-![image](https://github.com/Pankaj-Str/R-Programming-Tutorial/assets/36913690/63f950c5-b949-43fd-b6fb-4910d9607dd5)
-
-
-#### Step 5: Adding Notches
-
-You can add notches to the box plot to compare groups.
-
-```r
-# Create a box plot with notches
-ggplot(data, aes(x = group, y = values, fill = group)) +
-  geom_boxplot(notch = TRUE) +
-  labs(title = "Box Plot with Notches", x = "Group", y = "Values") +
-  scale_fill_manual(values = c("red", "blue", "green")) +
-  theme_minimal()
-```
-
-Output:
-![image](https://github.com/Pankaj-Str/R-Programming-Tutorial/assets/36913690/4c1740f7-408e-4917-ba91-c69a758b1a84)
-
-
-#### Step 6: Horizontal Box Plot
-
-Create a horizontal box plot by using `coord_flip()`.
-
-```r
-# Create a horizontal box plot
-ggplot(data, aes(x = group, y = values, fill = group)) +
-  geom_boxplot() +
-  labs(title = "Horizontal Box Plot", x = "Group", y = "Values") +
-  scale_fill_manual(values = c("red", "blue", "green")) +
-  coord_flip() +
-  theme_minimal()
-```
-
-Output:
-![image](https://github.com/Pankaj-Str/R-Programming-Tutorial/assets/36913690/a5ce2a8c-cb19-4446-90f3-f985d8a94c7c)
-
-
-### Conclusion
-
-In this tutorial, we covered the basics of creating and customizing box plots in R using both base R's `boxplot()` function and the `ggplot2` package. This included creating box plots for single and multiple groups, adding titles and labels, customizing colors, adding notches, and creating horizontal box plots. Box plots are a powerful tool for summarizing the distribution of a dataset and comparing different groups.
